@@ -8,5 +8,5 @@ def fibonacci_sequence(n):
                 result.append(1)
                 result.append(1)
             else:
-                    result.append(result[-1] + result[-2])
+                result.append(result[-1] + result[-2])
     return result
