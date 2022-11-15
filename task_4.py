@@ -2,7 +2,7 @@ def tower(n):
     a = 1    
     for i in range(n):
         for _ in range(3):
-                print(" " * (n - (i))  + "#" * (i + a) + " " * (n - (i + 1))) 
+                print(" " * (n - (i+ 1))  + "#" * (i + a) + " " * (n - i - 1)) 
         a+=1
         
         
@@ -17,14 +17,14 @@ def towers(data):
                 current_width = total_width - (max_size - (2 * i - (data[idx])))
                 
                 spaces = total_width//2 - (current_width - shift)
-                
-                if i == max_size+1 and data[-1]:
-                    spaces = spaces - 1
 
+                
                 if 2 * spaces > total_width:
                     print(" " * total_width + " ", end="")
+                elif idx + 1 == len(data):
+                     print(" " * spaces  + "#" * (current_width - (max_size - data[idx])) + " " * spaces, end="" )
                 else:
-                    print(" " * spaces  + "#" * (current_width - (max_size - data[idx])) + " " * (spaces + 1), end="" )
+                    print(" " * spaces  + "#" * (current_width - (max_size - data[idx])) + " " * spaces , end=" " )
             
             print()
         shift += 1
