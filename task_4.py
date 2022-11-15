@@ -21,10 +21,12 @@ def towers(data):
                 
                 if 2 * spaces > total_width:
                     print(" " * total_width + " ", end="")
+                elif data[idx] == max_size and (current_width - (max_size - data[idx])) == 1 and max_size != data[-1]:
+                    print(" " * spaces  + "#" * (current_width - (max_size - data[idx])) + " " * (spaces - 1), end="")
                 elif idx + 1 == len(data):
                      print(" " * spaces  + "#" * (current_width - (max_size - data[idx])) + " " * spaces, end="")
                 else:
-                    print(" " * spaces  + "#" * (current_width - (max_size - data[idx])) + " " * spaces , end=" "  )
+                    print(" " * spaces  + "#" * (current_width - (max_size - data[idx])) + " " * spaces, end=" " )
             
             print()
         shift += 1
