@@ -17,12 +17,11 @@ def towers(data):
                 current_width = total_width - (max_size - (2 * i - (data[idx])))
                 
                 spaces = total_width//2 - (current_width - shift)
-                if i == max_size:
-                    spaces -=1
+
                 if 2 * spaces > total_width:
                     print(" " * total_width + " ", end="")
                 else:
-                    print( " " * spaces + "#" * (current_width - (max_size - data[idx])) + " " * spaces + " ", end="" )
+                    print(" " * spaces + "#" * (current_width - (max_size - data[idx])) + " " * spaces, end=" " )
             
             print()
         shift += 1
